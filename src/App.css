@@ -10,6 +10,9 @@ body {
 .fs-10 {
   font-size: 10px;
 }
+.fs-12 {
+  font-size: 12px;
+}
 
 .top-navbar {
   border-bottom: 1px solid #DAE6FF;
