@@ -1,14 +1,80 @@
 import React, { Fragment } from 'react'
+import { FiSearch } from 'react-icons/fi'
+import Card from './Card'
 
 function Home() {
   return (
     <Fragment>
       <div className='p-3'>
-        <h2>Home</h2>
-        <hr />
-        <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics, raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan cliche semiotics ugh synth chillwave meditation. Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master cleanse hella DIY 90's blog.</p>
-        <p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher street art Carles, stumptown gluten-free Kickstarter artisan Wes Anderson wolf pug. Godard sustainable you probably haven't heard of them, vegan farm-to-table Williamsburg slow-carb readymade disrupt deep v. Meggings seitan Wes Anderson semiotics, cliche American Apparel whatever. Helvetica cray plaid, vegan brunch Banksy leggings +1 direct trade. Wayfarers codeply PBR selfies. Banh mi McSweeney's Shoreditch selfies, forage fingerstache food truck occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.</p>
-        <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics, raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan cliche semiotics ugh synth chillwave meditation. Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master cleanse hella DIY 90's blog.</p>
+        <div className='bg-white br-blue p-2'>
+          <div className="d-flex bd-highlight align-items-center flex-wrap">
+            <div className="me-auto p-2 bd-highlight">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <span className="bg-white input-group-text search-icon"><FiSearch /></span>
+                </div>
+                <input type="text" className="form-control search-box shadow-none" placeholder="Search for the art" />
+              </div>
+            </div>
+
+            <div className="p-2 bd-highlight">
+              Price:
+            </div>
+            <div className="p-2 bd-highlight">
+              <div className="dropdown">
+                <button className="btn dropdown-toggle filter-dd" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Under ₹1,000
+                </button>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href=".#">Under ₹1,000</a></li>
+                  <li><a className="dropdown-item" href=".#">₹1,000 – ₹5,000</a></li>
+                  <li><a className="dropdown-item" href=".#">₹5,000 – ₹10,000</a></li>
+                  <li><a className="dropdown-item" href=".#">Above ₹10,000</a></li>
+                </ul>
+              </div>
+            </div>
+            <div className="p-2 bd-highlight">
+              Discount:
+            </div>
+            <div className="p-2 bd-highlight">
+              <div className="dropdown">
+                <button className="btn dropdown-toggle filter-dd" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  All
+                </button>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href=".#">10% Off</a></li>
+                  <li><a className="dropdown-item" href=".#">25% Off</a></li>
+                  <li><a className="dropdown-item" href=".#">50% Off</a></li>
+                  <li><a className="dropdown-item" href=".#">All</a></li>
+                </ul>
+              </div>
+            </div>
+            <div className="p-2 bd-highlight">
+              <div className="dropdown">
+                <button className="btn dropdown-toggle filter-dd" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select Color
+                </button>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href=".#">Red</a></li>
+                  <li><a className="dropdown-item" href=".#">Green</a></li>
+                  <li><a className="dropdown-item" href=".#">Blue</a></li>
+                  <li><a className="dropdown-item" href=".#">All</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className='row d-flex align-items-start'>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+          </div>
+
+        </div>
       </div>
     </Fragment>
   )
