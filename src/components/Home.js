@@ -34,22 +34,23 @@ function Home() {
               </div>
             </div>
             <div className="p-2 bd-highlight">
-              Discount:
+              Sort by:
             </div>
             <div className="p-2 bd-highlight">
               <div className="dropdown">
                 <button className="btn dropdown-toggle filter-dd" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  All
+                  Featured
                 </button>
                 <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href=".#">10% Off</a></li>
-                  <li><a className="dropdown-item" href=".#">25% Off</a></li>
-                  <li><a className="dropdown-item" href=".#">50% Off</a></li>
-                  <li><a className="dropdown-item" href=".#">All</a></li>
+                  <li><a className="dropdown-item" href=".#">Featured</a></li>
+                  <li><a className="dropdown-item" href=".#">Price: Low to High</a></li>
+                  <li><a className="dropdown-item" href=".#">Price: High to Low</a></li>
+                  <li><a className="dropdown-item" href=".#">Ratings: Low to High</a></li>
+                  <li><a className="dropdown-item" href=".#">Ratings: High to Low</a></li>
                 </ul>
               </div>
             </div>
-            <div className="p-2 bd-highlight">
+            {/* <div className="p-2 bd-highlight">
               <div className="dropdown">
                 <button className="btn dropdown-toggle filter-dd" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Select Color
@@ -61,7 +62,7 @@ function Home() {
                   <li><a className="dropdown-item" href=".#">All</a></li>
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className='row d-flex align-items-start'>

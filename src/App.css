@@ -105,6 +105,28 @@ body {
   /* top: -75px; */
   object-fit: contain;
 }
+.card{
+  position: relative;
+}
+.tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  background-color: #ff0062;
+  border-top-left-radius: 0.25rem;
+  z-index: 1;
+}
+.tag:after {
+  content: '';
+	position: absolute;
+  height: 1.5rem;
+	left: 68px;
+  top: 0px;
+	border: 0.7rem solid #ff0062;
+	border-right-color: transparent;
+}
+/* https://codepen.io/bransonwerner/pen/jjQove */
 
 .card-btn {
   border-color: #00459f;
@@ -119,4 +141,13 @@ body {
 .card-btn:hover {
   border-color: #ff0062;
   background-position: 0;
+}
+.star-div {
+  position: relative;
+  height: 20px;
+  width: 100px;
+}
+.rating-star {
+  position: absolute;
+  height: 20px;
 }
