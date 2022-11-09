@@ -91,40 +91,24 @@ body {
   height: 50px;
   border: 1px solid #E9E9E9;
   border-radius: 10px;
-
-}
-
-.image-div {
-  /* height: 75px; */
+  background-color: #ffffff;
 }
 
 .item-image {
   height: 10rem;
   width: auto;
   position: relative;
-  /* top: -75px; */
-  object-fit: contain;
+  object-fit: cover;
 }
 .card{
   position: relative;
 }
-.tag {
+.tag{
   position: absolute;
   top: 0;
   left: 0;
-  height: 1.5rem;
-  background-color: #ff0062;
-  border-top-left-radius: 0.25rem;
-  z-index: 1;
-}
-.tag:after {
-  content: '';
-	position: absolute;
-  height: 1.5rem;
-	left: 68px;
-  top: 0px;
-	border: 0.7rem solid #ff0062;
-	border-right-color: transparent;
+  height: 5rem;
+  z-index: 5;
 }
 /* https://codepen.io/bransonwerner/pen/jjQove */
 

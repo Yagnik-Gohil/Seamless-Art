@@ -7,8 +7,8 @@ function Home() {
     <Fragment>
       <div className='p-3'>
         <div className='bg-white br-blue p-2'>
-          <div className="d-flex bd-highlight align-items-center flex-wrap">
-            <div className="me-auto p-2 bd-highlight">
+          <div className="row d-flex bd-highlight align-items-center flex-wrap p-2">
+            <div className="bd-highlight col-lg-4 col-md-6 col-sm-12">
               <div className="input-group">
                 <div className="input-group-prepend">
                   <span className="bg-white input-group-text search-icon"><FiSearch /></span>
@@ -17,37 +17,40 @@ function Home() {
               </div>
             </div>
 
-            <div className="p-2 bd-highlight">
-              Price:
-            </div>
-            <div className="p-2 bd-highlight">
-              <div className="dropdown">
-                <button className="btn dropdown-toggle filter-dd" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Under ₹1,000
-                </button>
-                <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href=".#">Under ₹1,000</a></li>
-                  <li><a className="dropdown-item" href=".#">₹1,000 – ₹5,000</a></li>
-                  <li><a className="dropdown-item" href=".#">₹5,000 – ₹10,000</a></li>
-                  <li><a className="dropdown-item" href=".#">Above ₹10,000</a></li>
-                </ul>
+            <div className='col-lg-8 col-md-6 col-sm-12 d-flex justify-content-end align-items-center flex-wrap'>
+              <div className="p-2 bd-highlight">
+                Price:
               </div>
-            </div>
-            <div className="p-2 bd-highlight">
-              Sort by:
-            </div>
-            <div className="p-2 bd-highlight">
-              <div className="dropdown">
-                <button className="btn dropdown-toggle filter-dd" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Featured
-                </button>
-                <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href=".#">Featured</a></li>
-                  <li><a className="dropdown-item" href=".#">Price: Low to High</a></li>
-                  <li><a className="dropdown-item" href=".#">Price: High to Low</a></li>
-                  <li><a className="dropdown-item" href=".#">Ratings: Low to High</a></li>
-                  <li><a className="dropdown-item" href=".#">Ratings: High to Low</a></li>
-                </ul>
+              <div className="p-2 bd-highlight">
+                <div className="dropdown">
+                  <button className="btn dropdown-toggle filter-dd" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Under ₹1,000
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li><a className="dropdown-item" href=".#">Under ₹1,000</a></li>
+                    <li><a className="dropdown-item" href=".#">₹1,000 – ₹5,000</a></li>
+                    <li><a className="dropdown-item" href=".#">₹5,000 – ₹10,000</a></li>
+                    <li><a className="dropdown-item" href=".#">Above ₹10,000</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div className="p-2 bd-highlight">
+                Sort by:
+              </div>
+              <div className="p-2 bd-highlight">
+                <div className="dropdown">
+                  <button className="btn dropdown-toggle filter-dd" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Best Seller
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li><a className="dropdown-item" href=".#">Best Seller</a></li>
+                    <li><a className="dropdown-item" href=".#">New Arrivals</a></li>
+                    <li><a className="dropdown-item" href=".#">Price: Low to High</a></li>
+                    <li><a className="dropdown-item" href=".#">Price: High to Low</a></li>
+                    <li><a className="dropdown-item" href=".#">Ratings: Low to High</a></li>
+                    <li><a className="dropdown-item" href=".#">Ratings: High to Low</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
             {/* <div className="p-2 bd-highlight">

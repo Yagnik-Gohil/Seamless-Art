@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import SeamlessArt from './components/SeamlessArt';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
+import ProductDetails from './components/ProductDetails';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<SeamlessArt />} exact></Route>
             <Route path="/home" element={<Home />} exact></Route>
             <Route path="/checkout" element={<Checkout />} exact></Route>
+            <Route path="/details/:id" element={<ProductDetails />} exact></Route>
           </Routes>
 
         </div>

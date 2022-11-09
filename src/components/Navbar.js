@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 function Navbar() {
     return (
         <Fragment>
-            <nav className="navbar navbar-expand-md navbar-light top-navbar text-black">
+            <nav className="navbar navbar-expand-md navbar-light bg-light top-navbar">
                 <div className="container-fluid">
+                    <a className="navbar-brand">Seamless Art</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -14,7 +15,7 @@ function Navbar() {
                         <ul className="d-flex align-items-center navbar-nav">
                             <li className="nav-item">
                                 <Link className="nav-link" to="/home" id="navbarDropdown" role="button">
-                                ASD
+                                Cart
                                 </Link>
                             </li>
                             <li className="nav-item dropdown">
