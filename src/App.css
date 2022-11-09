@@ -7,6 +7,29 @@ body {
   font-family: Quicksand, sans-serif;
 }
 
+/* ========== Scrollbar ========== */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00459f;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #FF0062;
+}
+
+/* END */
+
 .fs-10 {
   font-size: 10px;
 }
@@ -28,13 +51,12 @@ body {
   }
 }
 
-.logo-gradient {
-  background: #1977F3;
-  background: linear-gradient(to top right, #1977F3 0%, #FF0062 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
+.hover-red:hover {
+  color: #ff0062;
+  transform: scale(1.5);
+  transition: transform .2s; /* Animation */
+}
 .text-blue {
   color: #1977f3;
 }
@@ -134,4 +156,17 @@ body {
 .rating-star {
   position: absolute;
   height: 20px;
+}
+.modal-image{
+  height: 5rem;
+}
+.modal-content {
+  max-height: 30rem;
+  overflow: scroll;
+}
+.detail-image {
+  height: 40vh;
+}
+.customer-image{
+  height: 5vh;
 }

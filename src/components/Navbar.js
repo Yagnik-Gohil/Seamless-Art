@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link } from "react-router-dom";
+import { BsCart } from 'react-icons/bs';
+import ModalItem from './ModalItem'
 
 function Navbar() {
     return (
@@ -13,10 +15,8 @@ function Navbar() {
                     <div className="collapse navbar-collapse" id="collapsibleNavbar">
                         <span className='me-auto'></span>
                         <ul className="d-flex align-items-center navbar-nav">
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/home" id="navbarDropdown" role="button">
-                                Cart
-                                </Link>
+                            <li className="nav-item mx-2">
+                                <BsCart size={20} data-bs-toggle="modal" data-bs-target="#exampleModal" />
                             </li>
                             <li className="nav-item dropdown">
                                 <button type="button" className="btn nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -25,7 +25,7 @@ function Navbar() {
                                 <ul className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <li><Link className="dropdown-item" to="/home">Action</Link></li>
                                     <li><Link className="dropdown-item" to="/home">Another action</Link></li>
-                                    <li><hr className="dropdown-divider"/></li>
+                                    <li><hr className="dropdown-divider" /></li>
                                     <li><Link className="dropdown-item" to="/home">Log Out</Link></li>
                                 </ul>
                             </li>
@@ -33,6 +33,25 @@ function Navbar() {
                     </div>
                 </div>
             </nav>
+
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header mb-2">
+                            <h5 className="modal-title" id="exampleModalLabel">Items in my Cart</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <ModalItem />
+                        <ModalItem />
+                        <ModalItem />
+                        <ModalItem />
+                        <ModalItem />
+                        <div className="modal-footer mt-2">
+                            <button type="button" className="btn text-white m-1 bg-blue card-btn fs-12" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Fragment>
     )
 }
