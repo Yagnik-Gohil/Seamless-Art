@@ -198,3 +198,10 @@ body {
     padding: 10px !important;
   }
 }
+.checkout-image{
+  max-height: 20vh;
+}
+.checkout-col {
+  max-height: 70vh;
+  overflow: scroll;
+}
