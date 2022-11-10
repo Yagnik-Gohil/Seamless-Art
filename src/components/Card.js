@@ -23,7 +23,7 @@ function Card() {
       <div className='col-lg-3 col-md-4 col-sm-6 py-3 d-flex justify-content-center aligh-items-center'>
         <div className="card p-0" style={{ "width": "18rem" }}>
           <BestSeller className='tag'/>
-          <img src="https://cdn.dribbble.com/users/12006299/screenshots/18884584/media/2558c2f5d7edaf7e21d59c4520bf8888.jpg?compress=1&resize=400x300&vertical=top" className="card-img-top item-image" alt="..." />
+          <img src="https://cdn.dribbble.com/users/12006299/screenshots/18531159/media/63f6c2468b5c2f0c90da832f86dfaf51.jpg?compress=1&resize=400x300&vertical=top" className="card-img-top item-image" alt="..." />
           <div className="card-body">
             <h5 className="card-title">Hyper realistic lion pencil drawing</h5>
             <div className='d-flex align-items-center align-items-start flex-wrap'>

@@ -11,10 +11,10 @@ function ProductDetails() {
         <hr />
         <br></br>
         <div className='row'>
-          <div className='d-flex justify-content-center align-items-center col-lg-4 col-md-4 col-sm-12 p-2'>
-            <img className='detail-image' src='https://cdn.dribbble.com/users/12006299/screenshots/18884584/media/2558c2f5d7edaf7e21d59c4520bf8888.jpg?compress=1&resize=400x300&vertical=top' alt='...'></img>
+          <div className='d-flex justify-content-center align-items-center col-lg-5 col-md-5 col-sm-12 p-2'>
+            <img className='img-fluid detail-image' src='https://cdn.dribbble.com/users/12006299/screenshots/18884584/media/2558c2f5d7edaf7e21d59c4520bf8888.jpg?compress=1&resize=400x300&vertical=top' alt='...'></img>
           </div>
-          <div className='col-lg-8 col-md-8 col-sm-12 p-2'>
+          <div className='col-lg-7 col-md-7 col-sm-12 p-2'>
               <h3 className='fw-bold m-0'>₹800</h3>
               <p className='m-0'>M.R.P.: <span className='text-decoration-line-through'>₹1,000</span>&nbsp;<span className='text-red'>(20% off)</span></p>
               <div className="progress star-div mt-1">
@@ -46,12 +46,21 @@ function ProductDetails() {
         </div>
         <h4>Customer reviews</h4>
         <hr></hr>
-        <div className='row p-2'>
-          <CustomerReview/>
-          <CustomerReview/>
-          <CustomerReview/>
-          <CustomerReview/>
+        <br></br>
+        <div className='d-flex justify-content-center'>
+          <div className='review-div d-flex res-flex p-4 bg-light br-blue'>
+            <CustomerReview/>
+            <CustomerReview/>
+            <CustomerReview/>
+            <CustomerReview/>
+            <CustomerReview/>
+            <CustomerReview/>
+            <CustomerReview/>
+            <CustomerReview/>
+          </div>
         </div>
+        <br></br>
+        <br></br>
       </div>
     </Fragment>
   )

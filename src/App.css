@@ -165,8 +165,36 @@ body {
   overflow: scroll;
 }
 .detail-image {
-  height: 40vh;
+  max-height: 40vh;
 }
 .customer-image{
   height: 5vh;
+}
+.res-flex {
+  justify-content: flex-start !important;
+}
+.review-div {
+  max-width: 85vw;
+  overflow: scroll;
+  max-height: 50vh;
+}
+.review-card{
+  min-width: 30vw;
+  margin: 5px;
+  overflow: scroll;
+  min-height: 28vh;
+  max-height: 30vh;
+}
+
+@media only screen and (max-width: 991px) {
+  .res-flex {
+    flex-direction: column !important;
+  }
+  .review-div {
+    font-size: 14px;
+    padding: 5px !important;
+  }
+  .review-card > div {
+    padding: 10px !important;
+  }
 }
