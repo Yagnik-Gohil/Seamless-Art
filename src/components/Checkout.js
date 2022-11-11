@@ -10,7 +10,7 @@ function Checkout() {
         <h2>Checkout</h2>
         <hr />
         <div className='row p-2'>
-          <div className='col-lg-6 col-md-6 col-sm-12 checkout-col bg-light'>
+          <div className='col-lg-6 col-md-6 col-sm-12 checkout-col shadow'>
             <CheckoutItem />
             <CheckoutItem />
             <CheckoutItem />
@@ -19,7 +19,7 @@ function Checkout() {
             <CheckoutItem />
           </div>
           <div className='col-lg-6 col-md-6 col-sm-12'>
-            <div className="table-responsive">
+            <div className="table-responsive shadow rounded">
               <table className="table table-striped">
                 <thead>
                   <tr>
@@ -59,9 +59,11 @@ function Checkout() {
                 </tbody>
               </table>
             </div>
-
-            <h4>Make payment using card</h4>
-            <Link to={`/details/1`} className="btn btn-lg text-white m-1 bg-blue card-btn"><MdPayment /> Pay ₹1,000</Link>
+              <hr></hr>
+            <div className='p-2 shadow rounded text-center'>
+              <h4>Make payment using card</h4>
+              <Link to={`/details/1`} className="btn btn-lg text-white m-1 bg-blue card-btn"><MdPayment /> Pay ₹1,000</Link>
+            </div>
 
           </div>
         </div>

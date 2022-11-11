@@ -21,7 +21,7 @@ function Card() {
   return (
     <Fragment>
       <div className='col-lg-3 col-md-4 col-sm-6 py-3 d-flex justify-content-center aligh-items-center'>
-        <div className="card p-0" style={{ "width": "18rem" }}>
+        <div className="card p-0 shadow" style={{ "width": "18rem" }}>
           <BestSeller className='tag'/>
           <img src="https://cdn.dribbble.com/users/12006299/screenshots/18531159/media/63f6c2468b5c2f0c90da832f86dfaf51.jpg?compress=1&resize=400x300&vertical=top" className="card-img-top item-image" alt="..." />
           <div className="card-body">

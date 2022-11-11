@@ -12,7 +12,7 @@ function ProductDetails() {
         <br></br>
         <div className='row'>
           <div className='d-flex justify-content-center align-items-center col-lg-5 col-md-5 col-sm-12 p-2'>
-            <img className='img-fluid detail-image' src='https://cdn.dribbble.com/users/12006299/screenshots/18884584/media/2558c2f5d7edaf7e21d59c4520bf8888.jpg?compress=1&resize=400x300&vertical=top' alt='...'></img>
+            <img className='img-fluid detail-image shadow img-thumbnail' src='https://cdn.dribbble.com/users/12006299/screenshots/18884584/media/2558c2f5d7edaf7e21d59c4520bf8888.jpg?compress=1&resize=400x300&vertical=top' alt='...'></img>
           </div>
           <div className='col-lg-7 col-md-7 col-sm-12 p-2'>
               <h3 className='fw-bold m-0'>₹800</h3>
@@ -41,7 +41,7 @@ function ProductDetails() {
                 </li>
               </ul>
 
-              <a href="#" className="btn text-white m-1 bg-blue card-btn"><BsCartPlusFill /> Add to cart</a>
+              <a href="#" className="btn text-white m-1 bg-blue card-btn shadow"><BsCartPlusFill /> Add to cart</a>
           </div>
         </div>
         <h4>Customer reviews</h4>

@@ -7,7 +7,7 @@ function Orders() {
             <div className='p-3'>
                 <h2>My Orders</h2>
                 <hr />
-                <div className=''>
+                <div className='shadow rounded'>
                     <div className="accordion" id="accordionPanelsStayOpenExample">
                         <div className="accordion-item">
                             <h2 className="accordion-header" id="panelsStayOpen-headingOne">

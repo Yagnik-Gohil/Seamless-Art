@@ -208,3 +208,6 @@ body {
 .mw-fc{
   max-width: fit-content;
 }
+.dropdown-item:active {
+  background-color: #00459f !important;
+}
