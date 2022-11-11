@@ -25,7 +25,7 @@ function Navbar() {
                                 </li>
                             }
                             <li className="nav-item dropdown">
-                                <button type="button" className="btn nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button type="button" className="btn nav-link dropdown-toggle fw-bold" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Yagnik Gohil
                                 </button >
                                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

@@ -5,7 +5,7 @@ function OrderItem() {
         <Fragment>
             <div className="accordion-body">
                 <div className="table-responsive">
-                    <table className="table">
+                    <table className="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Product</th>
@@ -30,18 +30,15 @@ function OrderItem() {
                                 <td>+ ₹600</td>
                             </tr>
                             <tr>
-                                <td>Shipping Charge</td>
-                                <td>-</td>
+                                <td colspan="2">Shipping Charge</td>
                                 <td>+ ₹40</td>
                             </tr>
                             <tr>
-                                <td>Discount</td>
-                                <td>-</td>
+                                <td colspan="2">Discount</td>
                                 <td>- ₹600</td>
                             </tr>
                             <tr>
-                                <td className='fw-bold'>Total</td>
-                                <td className='fw-bold'>-</td>
+                                <td className='fw-bold' colspan="2">Total</td>
                                 <td className='fw-bold'>₹1,000</td>
                             </tr>
                         </tbody>

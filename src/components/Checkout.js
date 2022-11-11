@@ -20,7 +20,7 @@ function Checkout() {
           </div>
           <div className='col-lg-6 col-md-6 col-sm-12'>
             <div className="table-responsive">
-              <table className="table">
+              <table className="table table-striped">
                 <thead>
                   <tr>
                     <th scope="col">Product</th>
@@ -45,18 +45,15 @@ function Checkout() {
                     <td>+ ₹600</td>
                   </tr>
                   <tr>
-                    <td>Shipping Charge</td>
-                    <td>-</td>
+                    <td colspan="2">Shipping Charge</td>
                     <td>+ ₹40</td>
                   </tr>
                   <tr>
-                    <td>Discount</td>
-                    <td>-</td>
+                    <td colspan="2">Discount</td>
                     <td>- ₹600</td>
                   </tr>
                   <tr>
-                    <td className='fw-bold'>Total</td>
-                    <td className='fw-bold'>-</td>
+                    <td className='fw-bold' colspan="2">Total</td>
                     <td className='fw-bold'>₹1,000</td>
                   </tr>
                 </tbody>
