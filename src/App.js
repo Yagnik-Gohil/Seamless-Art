@@ -6,6 +6,8 @@ import SeamlessArt from './components/SeamlessArt';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
 import ProductDetails from './components/ProductDetails';
+import Account from './components/Account';
+import Orders from './components/Orders';
 
 function App() {
   return (
@@ -17,10 +19,12 @@ function App() {
         <div className="col-lg p-0 min-vh-100">
           <Navbar></Navbar>
           <Routes>
-            <Route path="/" element={<SeamlessArt />} exact></Route>
-            <Route path="/home" element={<Home />} exact></Route>
-            <Route path="/checkout" element={<Checkout />} exact></Route>
-            <Route path="/details/:id" element={<ProductDetails />} exact></Route>
+            <Route path="/" element={<SeamlessArt/>} exact></Route>
+            <Route path="/home" element={<Home/>} exact></Route>
+            <Route path="/checkout" element={<Checkout/>} exact></Route>
+            <Route path="/details/:id" element={<ProductDetails/>} exact></Route>
+            <Route path="/account" element={<Account/>} exact></Route>
+            <Route path="/orders" element={<Orders/>} exact></Route>
           </Routes>
 
         </div>

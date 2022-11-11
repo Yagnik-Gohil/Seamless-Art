@@ -1,9 +1,12 @@
 import React, { Fragment } from 'react'
+import { useLocation } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { BsCart } from 'react-icons/bs';
 import ModalItem from './ModalItem'
 
 function Navbar() {
+    const route = useLocation();
+    
     return (
         <Fragment>
             <nav className="navbar navbar-expand-md navbar-light bg-light top-navbar">
@@ -15,16 +18,20 @@ function Navbar() {
                     <div className="collapse navbar-collapse" id="collapsibleNavbar">
                         <span className='me-auto'></span>
                         <ul className="d-flex align-items-center navbar-nav">
-                            <li className="nav-item mx-2">
-                                <BsCart size={20} data-bs-toggle="modal" data-bs-target="#exampleModal" />
-                            </li>
+                            {
+                                !route.pathname.includes("checkout") &&
+                                <li className="nav-item mx-2">
+                                    <BsCart size={20} data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                                </li>
+                            }
                             <li className="nav-item dropdown">
                                 <button type="button" className="btn nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Yagnik Gohil
                                 </button >
-                                <ul className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to="/home">Action</Link></li>
-                                    <li><Link className="dropdown-item" to="/home">Another action</Link></li>
+                                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><Link className="dropdown-item" to="/account">My Account</Link></li>
+                                    <li><Link className="dropdown-item" to="/orders">My Orders</Link></li>
+                                    {/* <li><Link className="dropdown-item" to="/home">Favourits</Link></li> */}
                                     <li><hr className="dropdown-divider" /></li>
                                     <li><Link className="dropdown-item" to="/home">Log Out</Link></li>
                                 </ul>

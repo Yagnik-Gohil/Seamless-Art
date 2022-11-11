@@ -205,3 +205,6 @@ body {
   max-height: 70vh;
   overflow: scroll;
 }
+.mw-fc{
+  max-width: fit-content;
+}

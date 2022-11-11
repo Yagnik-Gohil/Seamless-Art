@@ -7,17 +7,17 @@ import { ReactComponent as BestSeller } from '../icons/BestSeller.svg'
 import { Link } from 'react-router-dom'
 
 function Card() {
-  const [isLiked, setIsLiked] = useState(false)
+  // const [isLiked, setIsLiked] = useState(false)
 
-  const handleLike = () => {
-    if (isLiked) {
-      setIsLiked(false)
-    }
-    else {
-      setIsLiked(true)
-    }
+  // const handleLike = () => {
+  //   if (isLiked) {
+  //     setIsLiked(false)
+  //   }
+  //   else {
+  //     setIsLiked(true)
+  //   }
 
-  }
+  // }
   return (
     <Fragment>
       <div className='col-lg-3 col-md-4 col-sm-6 py-3 d-flex justify-content-center aligh-items-center'>
@@ -41,11 +41,11 @@ function Card() {
           <div className='d-flex align-items-center justify-content-center flex-wrap pb-3'>
             <a href="#" className="btn text-white m-1 bg-blue card-btn fs-12"><BsCartPlusFill /> Add to cart</a>
             <Link to={`/details/1`} className="btn text-white m-1 bg-blue card-btn fs-12"><BiDetail /> View Details</Link>
-            {
+            {/* {
               isLiked ?
               <span className='p-2'><FcLike onClick={handleLike}/></span> :
               <span className='p-2'><FcLikePlaceholder onClick={handleLike}/></span>
-            }
+            } */}
           </div>
         </div>
       </div>
