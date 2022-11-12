@@ -45,15 +45,15 @@ function Checkout() {
                     <td>+ ₹600</td>
                   </tr>
                   <tr>
-                    <td colspan="2">Shipping Charge</td>
+                    <td colSpan="2">Shipping Charge</td>
                     <td>+ ₹40</td>
                   </tr>
                   <tr>
-                    <td colspan="2">Discount</td>
+                    <td colSpan="2">Discount</td>
                     <td>- ₹600</td>
                   </tr>
                   <tr>
-                    <td className='fw-bold' colspan="2">Total</td>
+                    <td className='fw-bold' colSpan="2">Total</td>
                     <td className='fw-bold'>₹1,000</td>
                   </tr>
                 </tbody>

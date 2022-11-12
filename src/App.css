@@ -61,7 +61,7 @@ body {
   color: #1977f3;
 }
 .bg-blue {
-  background-color: #00459f;
+  background-color: #00459f !important;
 }
 .br-blue {
   border: 1px solid #DAE6FF;
@@ -210,4 +210,10 @@ body {
 }
 .dropdown-item:active {
   background-color: #00459f !important;
+}
+.table-row {
+  vertical-align: middle;
+}
+.account-image{
+  height: 20vh;
 }
