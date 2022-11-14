@@ -217,3 +217,15 @@ body {
 .account-image{
   height: 20vh;
 }
+.progress-star-div{
+  position: relative;
+  height: 2rem;
+  width: 10rem !important;
+}
+.rating-stars {
+  position: absolute;
+  height: 2rem;
+}
+.single-rating-star{
+  height: 2rem;
+}
