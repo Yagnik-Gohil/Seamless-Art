@@ -36,6 +36,11 @@ function Navbar() {
                                     <li><Link className="dropdown-item" to="/home">Log Out</Link></li>
                                 </ul>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/login" className="nav-link fw-bold" role="button">
+                                    Login
+                                </Link >
+                            </li>
                         </ul>
                     </div>
                 </div>

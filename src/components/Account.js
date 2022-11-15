@@ -47,6 +47,14 @@ function Account() {
                                     <input type="text" name="name" className="form-control" />
                                 </div>
                             </div>
+                            <div className="row my-3">
+                                <div className="col-md-4 col-sm-12">
+                                    <label className="col-form-label">Email</label>
+                                </div>
+                                <div className="col-md-8 col-sm-12">
+                                    <input type="text" name="email" className="form-control" />
+                                </div>
+                            </div>
 
                             <div className="row my-3">
                                 <div className="col-md-4 col-sm-12">
