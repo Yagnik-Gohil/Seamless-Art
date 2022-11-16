@@ -6,7 +6,9 @@ body {
   padding: 0;
   font-family: Quicksand, sans-serif;
 }
-
+.vh-80 {
+  min-height: 80vh;
+}
 /* ========== Scrollbar ========== */
 /* width */
 ::-webkit-scrollbar {
