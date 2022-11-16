@@ -229,3 +229,28 @@ body {
 .single-rating-star{
   height: 2rem;
 }
+.alert-parent{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+.alert{
+  display: inline-block;
+}
+.fill-5 {
+  animation: fill 5s linear 1;
+}
+.fill-1 {
+  animation: fill 1s linear 1;
+}
+@keyframes fill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
