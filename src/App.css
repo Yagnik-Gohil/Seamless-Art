@@ -236,15 +236,20 @@ body {
   width: 100%;
   text-align: center;
   margin-top: 20px;
+  z-index: 5;
 }
 .alert{
   display: inline-block;
+  z-index: 5;
 }
 .fill-5 {
   animation: fill 5s linear 1;
 }
 .fill-2 {
   animation: fill 2s linear 1;
+}
+.fill-1 {
+  animation: fill 1s linear 1;
 }
 @keyframes fill {
   0% {
