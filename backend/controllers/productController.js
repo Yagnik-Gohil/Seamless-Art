@@ -50,3 +50,9 @@ exports.getAll = catchAsync(async (req, res, next) => {
   const doc = await Product.find();
   res.status(200).json({ status: "success", totalResults: doc.length, doc });
 });
+
+exports.getProduct = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+  const product = await Product.findById({ _id: id });
+  res.status(200).json({ status: "success", data: product });
+});
