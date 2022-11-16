@@ -1,10 +1,61 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { FiSearch } from 'react-icons/fi'
 import Card from './Card'
+import axios from "axios";
 
 function Home() {
+
+  const [show, setShow] = useState(false);
+  const [type, setType] = useState("primary");
+  const [productList, setProductList] = useState([]);
+
+  const config = localStorage.getItem('jwt') ? { headers: { Authorization: `Bearer ${localStorage.getItem('jwt')}` } } : {};
+  const getData = async (e) => {
+    try {
+      const res = await axios.get(
+        "http://localhost:8000/api/v1/product",
+        config
+      );
+
+      if (res.data.status === "success") {
+        setProductList(res.data.doc);
+        // setBackup(res.data.doc)
+      } else {
+        ShowAlert("danger", "Data not available")
+      }
+    } catch (err) {
+      if (err.response.data.error.statusCode === 401) {
+        window.location.replace('http://localhost:3000');
+      }
+      ShowAlert("danger", err.response.data.message);
+    }
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  function ShowAlert(type, message) {
+    setType(type)
+    setAlertMessage(message);
+    setShow(true)
+    window.setTimeout(() => {
+      setShow(false);
+      setAlertMessage("");
+    }, 2000);
+  }
   return (
     <Fragment>
+      {show &&
+        <div className='alert-parent'>
+          <div className={`alert alert-${type}`} role="alert">
+            {alertMessage}
+            <div className="progress mt-2 bg-white">
+              <div className={`progress-bar progress-bar-striped bg-${type} progress-bar-animated fill-2`} role="progressbar" aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      }
       <div className='p-3'>
         <div className='bg-white br-blue p-2'>
           <div className="row d-flex bd-highlight align-items-center flex-wrap p-2">
@@ -69,13 +120,12 @@ function Home() {
           </div>
 
           <div className='row d-flex align-items-start'>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
+            {
+              productList &&
+              productList.map((product, id) => {
+                return <Card key={id} data={product}/>
+              })
+            }
           </div>
 
         </div>

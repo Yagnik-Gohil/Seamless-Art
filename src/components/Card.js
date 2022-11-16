@@ -6,7 +6,8 @@ import { ReactComponent as Stars } from '../icons/Stars.svg'
 import { ReactComponent as BestSeller } from '../icons/BestSeller.svg'
 import { Link } from 'react-router-dom'
 
-function Card() {
+function Card({data}) {
+  const path = "http://localhost:8000/images/";
   // const [isLiked, setIsLiked] = useState(false)
 
   // const handleLike = () => {
@@ -18,24 +19,25 @@ function Card() {
   //   }
 
   // }
+  // console.log(data)
   return (
     <Fragment>
       <div className='col-lg-3 col-md-4 col-sm-6 py-3 d-flex justify-content-center aligh-items-center'>
         <div className="card p-0 shadow" style={{ "width": "18rem" }}>
-          <BestSeller className='tag'/>
-          <img src="https://cdn.dribbble.com/users/12006299/screenshots/18531159/media/63f6c2468b5c2f0c90da832f86dfaf51.jpg?compress=1&resize=400x300&vertical=top" className="card-img-top item-image" alt="..." />
+          { data.isBestSeller && <BestSeller className='tag'/>}
+          <img src={ path + data.image } className="card-img-top item-image" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">Hyper realistic lion pencil drawing</h5>
+            <h5 className="card-title">{data.name}</h5>
             <div className='d-flex align-items-center align-items-start flex-wrap'>
               <div className="progress star-div">
                 <div className="progress-bar bg-warning" role="progressbar" aria-label="Example 20px high" style={{"width": "85%"}} aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                 <Stars className='rating-star'/>
               </div>
-              &nbsp; (11)
+              &nbsp; ({data.totalRatings})
             </div>
             <div className="card-text d-flex align-items-end flex-wrap">
-              <h3 className='fw-bold m-0'>₹800</h3>&nbsp;
-              <span className='text-decoration-line-through'>₹1,000</span>&nbsp;(20% off)
+              <h3 className='fw-bold m-0'>₹{data.price}</h3>&nbsp;
+              <span className='text-decoration-line-through'>₹{data.mrp}</span>&nbsp;({data.discount}% off)
             </div>
           </div>
           <div className='d-flex align-items-center justify-content-center flex-wrap pb-3'>
