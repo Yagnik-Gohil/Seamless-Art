@@ -71,9 +71,9 @@ function Signup() {
                     <div className='alert-parent'>
                         <div className={`alert alert-${type}`} role="alert">
                             {alertMessage}
-                        <div className="progress mt-2 bg-white">
-                            <div className={`progress-bar progress-bar-striped bg-${type} progress-bar-animated fill-5`} role="progressbar" aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                            <div className="progress mt-2 bg-white">
+                                <div className={`progress-bar progress-bar-striped bg-${type} progress-bar-animated fill-5`} role="progressbar" aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
                     </div>
                     
