@@ -42,6 +42,10 @@ const productSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  quantity: {
+    type: Number,
+    default: 5,
+  },
 });
 
 productSchema.pre("save", function (next) {

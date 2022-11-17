@@ -10,6 +10,7 @@ const globalErrorHandler = require("./controllers/errorController");
 
 const userRouter = require("./routes/userRouter");
 const productRouter = require("./routes/productRouter");
+const accountRouter = require("./routes/accountRouter");
 
 const app = express();
 
@@ -29,6 +30,8 @@ app.use(cookieParser());
 
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/product", productRouter);
+app.use("/api/v1/account", accountRouter);
+
 app.all("*", (req, res, next) => {
   next(new AppError(`Cant find ${req.originalUrl} on this server!`, 404));
 });

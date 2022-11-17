@@ -27,6 +27,22 @@ const userSchema = mongoose.Schema({
       message: "Password not matched!",
     },
   },
+  name: {
+    type: String,
+  },
+  address_1: {
+    type: String,
+  },
+  address_2: {
+    type: String,
+  },
+  address_3: {
+    type: String,
+  },
+  image: {
+    type: String,
+    default: "default.png",
+  },
 });
 
 userSchema.pre("save", async function (next) {

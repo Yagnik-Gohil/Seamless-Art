@@ -11,7 +11,8 @@ function ProductDetails() {
   let { id } = useParams();
   const [show, setShow] = useState(false);
   const [type, setType] = useState("primary");
-  const [product, setProduct] = useState()
+  const [alertMessage, setAlertMessage] = useState();
+  const [product, setProduct] = useState();
 
   const config = localStorage.getItem('jwt') ? { headers: { Authorization: `Bearer ${localStorage.getItem('jwt')}` } } : {};
   const getProduct = async (id) => {
