@@ -41,7 +41,7 @@ function Card({data}) {
             </div>
           </div>
           <div className='d-flex align-items-center justify-content-center flex-wrap pb-3'>
-            <a href="#" className="btn text-white m-1 bg-blue card-btn fs-12"><BsCartPlusFill /> Add to cart</a>
+            <a href="/" className="btn text-white m-1 bg-blue card-btn fs-12"><BsCartPlusFill /> Add to cart</a>
             <Link to={`/details/${data._id}`} className="btn text-white m-1 bg-blue card-btn fs-12"><BiDetail /> View Details</Link>
             {/* {
               isLiked ?

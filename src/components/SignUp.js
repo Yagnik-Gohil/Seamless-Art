@@ -47,7 +47,7 @@ function Signup() {
             }
 
         } catch (err) {
-            if(err.response.data.error.code == 11000 && err.response.data.error.statusCode == 500){
+            if(err.response.data.error.code === 11000 && err.response.data.error.statusCode === 500){
                 ShowAlert("danger", "User already exists!");
             } else {
                 ShowAlert("danger", err.response.data.message.replace("User validation failed: ", "").replace("email: ", "").replace("passwordConfirm: ", "").replace("password: ", ""));

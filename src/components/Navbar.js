@@ -57,7 +57,7 @@ function Navbar() {
             }
             <nav className="navbar navbar-expand-md navbar-light bg-light top-navbar">
                 <div className="container-fluid">
-                    <a className="navbar-brand">Seamless Art</a>
+                    <Link to="/" className="navbar-brand">Seamless Art</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -73,7 +73,7 @@ function Navbar() {
                             {
                                 userEmail &&
                                 <li className="nav-item dropdown">
-                                    <button type="button" className="btn nav-link dropdown-toggle fw-bold" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button type="button" className="btn nav-link dropdown-toggle fw-bold" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                         {userEmail}
                                     </button >
                                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -87,7 +87,7 @@ function Navbar() {
                             }
                             {!userEmail &&
                                 <li className="nav-item">
-                                    <Link to="/login" className="nav-link fw-bold" role="button">
+                                    <Link to="/login" className="nav-link fw-bold">
                                         Login
                                     </Link >
                                 </li>

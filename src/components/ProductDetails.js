@@ -89,7 +89,7 @@ function ProductDetails() {
                 </Fragment>
               }
 
-              <a href="#" className="btn text-white m-1 bg-blue card-btn shadow"><BsCartPlusFill /> Add to cart</a>
+              <a href="/" className="btn text-white m-1 bg-blue card-btn shadow"><BsCartPlusFill /> Add to cart</a>
             </div>
           </div>
           <h4>Customer reviews</h4>

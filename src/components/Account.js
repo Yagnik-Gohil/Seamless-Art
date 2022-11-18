@@ -126,7 +126,7 @@ function Account() {
                 <img
                   className="account-image"
                   src={isFileChange ? URL.createObjectURL(file) : path + file}
-                  alt="User Image"
+                  alt="User"
                 ></img>
               </div>
               <p>
