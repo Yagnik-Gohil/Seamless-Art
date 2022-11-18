@@ -247,6 +247,12 @@ body {
 .fill-5 {
   animation: fill 5s linear 1;
 }
+.fill-4 {
+  animation: fill 4s linear 1;
+}
+.fill-3 {
+  animation: fill 3s linear 1;
+}
 .fill-2 {
   animation: fill 2s linear 1;
 }

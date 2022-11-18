@@ -7,6 +7,7 @@ function Home() {
 
   const [show, setShow] = useState(false);
   const [type, setType] = useState("primary");
+  const [alertMessage, setAlertMessage] = useState();
   const [productList, setProductList] = useState([]);
 
   const config = localStorage.getItem('jwt') ? { headers: { Authorization: `Bearer ${localStorage.getItem('jwt')}` } } : {};
@@ -24,10 +25,14 @@ function Home() {
         ShowAlert("danger", "Data not available")
       }
     } catch (err) {
-      if (err.response.data.error.statusCode === 401) {
-        window.location.replace('http://localhost:3000');
+      if (err.code === "ERR_NETWORK") {
+        ShowAlert("danger", err.message  + ", Check your Internet Connection.");
       }
-      ShowAlert("danger", err.response.data.message);
+      else if (err.response.data.error.statusCode === 401) {
+        window.location.replace('http://localhost:3000');
+      } else {
+        ShowAlert("danger", err.response.data.message);
+      }
     }
   }
 
@@ -42,7 +47,7 @@ function Home() {
     window.setTimeout(() => {
       setShow(false);
       setAlertMessage("");
-    }, 2000);
+    }, 3000);
   }
   return (
     <Fragment>
@@ -51,7 +56,7 @@ function Home() {
           <div className={`alert alert-${type}`} role="alert">
             {alertMessage}
             <div className="progress mt-2 bg-white">
-              <div className={`progress-bar progress-bar-striped bg-${type} progress-bar-animated fill-2`} role="progressbar" aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="100"></div>
+              <div className={`progress-bar progress-bar-striped bg-${type} progress-bar-animated fill-3`} role="progressbar" aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
         </div>
