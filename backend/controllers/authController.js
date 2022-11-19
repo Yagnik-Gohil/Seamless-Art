@@ -88,3 +88,17 @@ exports.protect = catchAsync(async (req, res, next) => {
   res.locals.user = currentUser;
   next();
 });
+
+exports.updatePassword = catchAsync(async (req, res, next) => {
+  const user = await User.findById(req.user.id).select("+password");
+  if (!(await user.comparePassword(req.body.passwordCurrent, user.password))) {
+    return next(new AppError("Your current password is incorrect", 401));
+  }
+
+  user.password = req.body.password;
+  user.passwordConfirm = req.body.passwordConfirm;
+
+  await user.save();
+
+  createSendToken(user, 200, req, res);
+});

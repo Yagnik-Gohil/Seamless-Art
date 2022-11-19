@@ -34,7 +34,7 @@ function Login() {
                 { email, password }
             );
             if (response.data.status === "success") {
-                console.log(response.data)
+                // console.log(response.data)
                 localStorage.setItem('jwt', response.data.token);
                 localStorage.setItem('user', response.data.data.user.email);
 

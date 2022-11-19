@@ -7,6 +7,11 @@ function Account() {
   const [type, setType] = useState("primary");
   const [alertMessage, setAlertMessage] = useState();
   const [details, setDetails] = useState();
+  const [passwordDetails, setPasswordDetails] = useState({
+    passwordCurrent: "",
+    password: "",
+    passwordConfirm: "",
+  });
   const [file, setFile] = useState();
   const [isFileChange, setIsFileChange] = useState(false);
 
@@ -85,6 +90,45 @@ function Account() {
     } catch (err) {
       // console.log(err)
       ShowAlert("danger", err.response.data.message);
+    }
+  };
+
+  const handlePasswordInput = (e) => {
+    const { name, value } = e.target;
+    setPasswordDetails((old) => {
+      return {
+        ...old,
+        [name]: value,
+      };
+    });
+  };
+  
+  const submitPasswordData = async (e) => {
+    try {
+      e.preventDefault();
+
+      // console.log(passwordDetails)
+      const response = await axios({
+        method: "patch",
+        url: "http://localhost:8000/api/v1/account/updatePassword",
+        data: passwordDetails,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+          "Content-Type": "application/json",
+        },
+      });
+      
+      if (response.data.status === "success") {
+        ShowAlert("success", "Password Updated successfully!");
+        setPasswordDetails({
+          passwordCurrent: "",
+          password: "",
+          passwordConfirm: "",
+        });
+      }
+    } catch (err) {
+      // console.log(err)
+      ShowAlert("danger", err.response.data.message.replace("User validation failed: ", "").replace("email: ", "").replace("passwordConfirm: ", "").replace("password: ", ""));
     }
   };
 
@@ -325,7 +369,13 @@ function Account() {
                   <label className="col-form-label">Old Password</label>
                 </div>
                 <div className="col-md-8 col-sm-12">
-                  <input type="password" name="name" className="form-control" />
+                  <input
+                    type="password"
+                    name="passwordCurrent"
+                    className="form-control"
+                    value={passwordDetails.passwordCurrent}
+                    onChange={handlePasswordInput}
+                  />
                 </div>
               </div>
               <div className="row my-3">
@@ -333,7 +383,13 @@ function Account() {
                   <label className="col-form-label">New Password</label>
                 </div>
                 <div className="col-md-8 col-sm-12">
-                  <input type="password" name="name" className="form-control" />
+                  <input
+                    type="password"
+                    name="password"
+                    className="form-control"
+                    value={passwordDetails.password}
+                    onChange={handlePasswordInput}
+                  />
                 </div>
               </div>
               <div className="row my-3">
@@ -341,7 +397,13 @@ function Account() {
                   <label className="col-form-label">Confirm New Password</label>
                 </div>
                 <div className="col-md-8 col-sm-12">
-                  <input type="password" name="name" className="form-control" />
+                  <input
+                    type="password"
+                    name="passwordConfirm"
+                    className="form-control"
+                    value={passwordDetails.passwordConfirm}
+                    onChange={handlePasswordInput}
+                  />
                 </div>
               </div>
 
@@ -351,6 +413,7 @@ function Account() {
                     type="button"
                     className="btn text-white m-1 bg-blue card-btn fs-12"
                     data-bs-dismiss="modal"
+                    onClick={submitPasswordData}
                   >
                     Save
                   </button>

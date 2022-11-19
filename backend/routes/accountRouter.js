@@ -13,5 +13,8 @@ router
     accountController.resizeUserPhoto,
     accountController.updateUserData
   );
+router
+  .route("/updatePassword")
+  .patch(authController.protect, authController.updatePassword);
 
 module.exports = router;
