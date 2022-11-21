@@ -3,23 +3,34 @@ import { Link } from 'react-router-dom'
 import { BiDetail, BiTrash } from 'react-icons/bi'
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai'
 
-function CheckoutItem() {
+function CheckoutItem({ data, manageItems }) {
+  const path = "http://localhost:8000/images/";
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'INR',
+    minimumFractionDigits: 0,
+  });
   return (
     <Fragment>
-            <div className="d-flex align-items-start py-2">
-                <img src="https://cdn.dribbble.com/users/12006299/screenshots/18884584/media/2558c2f5d7edaf7e21d59c4520bf8888.jpg?compress=1&resize=400x300&vertical=top" className="checkout-image img-thumbnail shadow" alt="..." />
-                <div className='px-4'>
-                    <p className='m-0'>Hyper realistic lion pencil drawing</p>
-                    <div className="card-text d-flex align-items-end flex-wrap">
-                      <h4 className='fw-bold m-0'>₹800</h4>&nbsp;
-                      <span className='text-decoration-line-through'>₹1,000</span>&nbsp;(20% off)
-                    </div>
-                    <p className='m-0'>Quantity: &nbsp; <AiOutlineMinusCircle className='hover-red'/> &nbsp; <span className='fw-bold'>1</span> &nbsp; <AiOutlinePlusCircle className='hover-red'/></p>
-                    <Link to={`/details/1`} className="btn text-white m-1 bg-blue card-btn fs-12 shadow"><BiDetail /> View Details</Link>
-                    <Link to={`/details/1`} className="btn text-white m-1 bg-blue card-btn fs-12 shadow"><BiTrash /> Remove Item</Link>
-                </div>
+      <div className="row py-2">
+        <div className='col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center'>
+          <img src={path + data.image} className="checkout-image img-thumbnail shadow" alt="..." />
+        </div>
+
+        <div className='col-lg-8 col-md-6 col-sm-12 checkout-col-details'>
+          <div>
+            <p className='m-0'>{data.name}</p>
+            <div className="card-text d-flex align-items-end flex-wrap">
+              <h4 className='fw-bold m-0'>{formatter.format(data.price)}</h4>&nbsp;
+              <span className='text-decoration-line-through'>{formatter.format(data.mrp)}</span>&nbsp;<span className='text-red'>(20% off)</span>
             </div>
-        </Fragment>
+            <p className='m-0'>Quantity: &nbsp; <AiOutlineMinusCircle className='hover-red' onClick={() => manageItems({ id: data._id, action: "remove" })} /> &nbsp; <span className='fw-bold'>{data.quantity}</span> &nbsp; <AiOutlinePlusCircle className='hover-red' onClick={() => manageItems({ id: data._id, action: "add" })} /></p>
+            <Link to={`/details/${data._id}`} className="btn text-white m-1 bg-blue card-btn fs-12 shadow"><BiDetail /> View Details</Link>
+            <button className="btn text-white m-1 bg-blue card-btn fs-12 shadow" onClick={() => manageItems({ id: data._id, action: "delete" })}><BiTrash /> Remove Item</button>
+          </div>
+        </div>
+      </div>
+    </Fragment>
   )
 }
 

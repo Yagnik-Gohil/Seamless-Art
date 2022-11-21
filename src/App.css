@@ -201,9 +201,15 @@ body {
   .review-card > div {
     padding: 10px !important;
   }
+  .checkout-col-details {
+    display: flex;
+    justify-content: center;
+  }
 }
 .checkout-image{
-  max-height: 20vh;
+  max-height: 7rem;
+  min-width: 10rem;
+  object-fit: cover;
 }
 .checkout-col {
   max-height: 70vh;
