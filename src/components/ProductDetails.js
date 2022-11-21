@@ -71,7 +71,7 @@ function ProductDetails() {
               <h3 className='fw-bold m-0'>₹{product.price}</h3>
               <p className='m-0'>M.R.P.: <span className='text-decoration-line-through'>₹{product.mrp}</span>&nbsp;<span className='text-red'>({product.discount}% off)</span></p>
               <div className="progress star-div mt-1">
-                <div className="progress-bar bg-warning" role="progressbar" aria-label="Example 20px high" style={{ "width": "85%" }} aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                <div className="progress-bar bg-warning" role="progressbar" aria-label="Example 20px high" style={{"width": `${product.ratingsAverage}%`}} aria-valuenow={`${product.ratingsAverage}`} aria-valuemin="0" aria-valuemax="100"></div>
                 <Stars className='rating-star' />
               </div>
               <p>{product.averageRatings} out of 5 <span className='fs-12'>({product.totalRatings} ratings)</span></p>

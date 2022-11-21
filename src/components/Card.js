@@ -30,7 +30,7 @@ function Card({data}) {
             <h5 className="card-title">{data.name}</h5>
             <div className='d-flex align-items-center align-items-start flex-wrap'>
               <div className="progress star-div">
-                <div className="progress-bar bg-warning" role="progressbar" aria-label="Example 20px high" style={{"width": "85%"}} aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                <div className="progress-bar bg-warning" role="progressbar" aria-label="Example 20px high" style={{"width": `${data.ratingsAverage}%`}} aria-valuenow={`${data.ratingsAverage}`} aria-valuemin="0" aria-valuemax="100"></div>
                 <Stars className='rating-star'/>
               </div>
               &nbsp; ({data.totalRatings})
