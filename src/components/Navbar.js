@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { Link, useNavigate } from "react-router-dom";
 import { BsCart } from 'react-icons/bs';
@@ -14,6 +14,42 @@ function Navbar() {
     const [show, setShow] = useState(false);
     const [type, setType] = useState("primary");
     const [alertMessage, setAlertMessage] = useState()
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')))
+
+    const getCart = () => {
+        const cart = JSON.parse(localStorage.getItem('cart'))
+        setCart(cart)
+    }
+
+    function getIndex(id) {
+        var i;
+        for (i = 0; i < cart.length; i++) {
+            if (cart[i]._id === id) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    const manageItems = (data) => {
+        let index = getIndex(data.id)
+        if (data.action === "add") {
+            if (cart[index].quantity === 5) {
+                ShowAlert("warning", `The item "${cart[index].name}" has a limit of 5 per customer.`)
+                return;
+            } else {
+                cart[index].quantity = cart[index].quantity + 1
+            }
+        } else {
+            if (cart[index].quantity === 1) {
+                cart.splice(index, 1)
+            } else {
+                cart[index].quantity = cart[index].quantity - 1
+            }
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        getCart();
+    }
 
     const logout = async () => {
         try {
@@ -66,7 +102,7 @@ function Navbar() {
                         <ul className="d-flex align-items-center navbar-nav">
                             {
                                 !route.pathname.includes("checkout") &&
-                                <li className="nav-item mx-2">
+                                <li className="nav-item mx-2" onClick={getCart}>
                                     <BsCart size={20} data-bs-toggle="modal" data-bs-target="#exampleModal" />
                                 </li>
                             }
@@ -104,11 +140,16 @@ function Navbar() {
                             <h5 className="modal-title" id="exampleModalLabel">Items in my Cart</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <ModalItem />
-                        <ModalItem />
-                        <ModalItem />
-                        <ModalItem />
-                        <ModalItem />
+                        {
+                            cart &&
+                            cart.map((product, id) => {
+                                return <ModalItem key={id} data={product} manageItems={manageItems} />
+                            })
+                        }
+                        {
+                            (!cart || cart.length === 0) &&
+                            <h2 className='text-center'>Cart is empty!</h2>
+                        }
                         <div className="modal-footer mt-2">
                             <button type="button" className="btn text-white m-1 bg-blue card-btn fs-12" data-bs-dismiss="modal">Close</button>
                         </div>

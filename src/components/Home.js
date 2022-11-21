@@ -128,7 +128,7 @@ function Home() {
             {
               productList &&
               productList.map((product, id) => {
-                return <Card key={id} data={product}/>
+                return <Card key={id} data={product} ShowAlert={ShowAlert}/>
               })
             }
           </div>

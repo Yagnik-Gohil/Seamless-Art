@@ -161,6 +161,8 @@ body {
 }
 .modal-image{
   height: 5rem;
+  width: 7rem;
+  object-fit: cover;
 }
 .modal-content {
   max-height: 30rem;

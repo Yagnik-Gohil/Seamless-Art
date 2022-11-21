@@ -6,11 +6,10 @@ import { ReactComponent as Stars } from '../icons/Stars.svg'
 import { ReactComponent as BestSeller } from '../icons/BestSeller.svg'
 import { Link } from 'react-router-dom'
 
-function Card({ data }) {
+function Card({ data, ShowAlert }) {
   const path = "http://localhost:8000/images/";
 
   function containsObject(id, cart) {
-    console.log(cart)
     var i;
     for (i = 0; i < cart.length; i++) {
       if (cart[i]._id === id) {
@@ -36,12 +35,18 @@ function Card({ data }) {
     else {
       let status = containsObject(item._id, cart)
       if (status.is_Exist) {
-        cart[status.index].quantity = cart[status.index].quantity + 1
+        if(cart[status.index].quantity === 5 ){
+          ShowAlert("warning", `The item "${data.name}" has a limit of 5 per customer.`)
+          return;
+        } else {
+          cart[status.index].quantity = cart[status.index].quantity + 1;
+        }
       } else {
         cart.push(item);
       }
       localStorage.setItem('cart', JSON.stringify(cart));
     }
+    ShowAlert("success","Item Added to cart")
   }
   return (
     <Fragment>
@@ -56,7 +61,7 @@ function Card({ data }) {
                 <div className="progress-bar bg-warning" role="progressbar" aria-label="Example 20px high" style={{ "width": `${data.ratingsAverage}%` }} aria-valuenow={`${data.ratingsAverage}`} aria-valuemin="0" aria-valuemax="100"></div>
                 <Stars className='rating-star' />
               </div>
-              &nbsp; ({data.totalRatings})
+              <p className='m-0'>&nbsp; ({data.totalRatings}) { data.quantity === 0 && <span className='fs-12 text-red'>&nbsp; Out Of Stock!</span>}</p>
             </div>
             <div className="card-text d-flex align-items-end flex-wrap">
               <h3 className='fw-bold m-0'>₹{data.price}</h3>&nbsp;
@@ -64,7 +69,13 @@ function Card({ data }) {
             </div>
           </div>
           <div className='d-flex align-items-center justify-content-center flex-wrap pb-3'>
-            <button className="btn text-white m-1 bg-blue card-btn fs-12" onClick={addToCart}><BsCartPlusFill /> Add to cart</button>
+            {
+              data.quantity === 0 ? 
+              <button className="btn text-white m-1 bg-blue card-btn fs-12"><BsCartPlusFill /> Out Of Stock</button>
+              :
+              <button className="btn text-white m-1 bg-blue card-btn fs-12" onClick={addToCart}><BsCartPlusFill /> Add to cart</button>
+            }
+            
             <Link to={`/details/${data._id}`} className="btn text-white m-1 bg-blue card-btn fs-12"><BiDetail /> View Details</Link>
             {/* {
               isLiked ?
