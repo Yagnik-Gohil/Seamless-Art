@@ -1,7 +1,12 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { ReactComponent as Star } from '../icons/Star.svg'
 
 function OrderItem() {
+
+    const [rating, setRating] = useState(0)
+    const handleRating = (number) => {
+        setRating(number);
+    }
     return (
         <Fragment>
             <div className="accordion-body">
@@ -60,21 +65,21 @@ function OrderItem() {
                         <form className='p-4'>
                             <div className='d-flex justify-content-center'>
                                 <div className="progress progress-star-div" style={{ "height": "2rem" }}>
-                                    <div className="progress-bar bg-warning" role="progressbar" aria-label="Example 20px high" style={{ "width": "60%" }} aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div className="progress-bar bg-warning" role="progressbar" aria-label="Example 20px high" style={{ "width": `${rating * 20}%` }} aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                     <div className='rating-stars d-flex flex-row'>
-                                        <div>
+                                        <div onClick={() => handleRating(1)}>
                                             <Star className='single-rating-star'/>
                                         </div>
-                                        <div>
+                                        <div onClick={() => handleRating(2)}>
                                             <Star className='single-rating-star'/>
                                         </div>
-                                        <div>
+                                        <div onClick={() => handleRating(3)}>
                                             <Star className='single-rating-star'/>
                                         </div>
-                                        <div>
+                                        <div onClick={() => handleRating(4)}>
                                             <Star className='single-rating-star'/>
                                         </div>
-                                        <div>
+                                        <div onClick={() => handleRating(5)}>
                                             <Star className='single-rating-star'/>
                                         </div>
                                     </div>

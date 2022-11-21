@@ -69,6 +69,11 @@ function Navbar() {
             ShowAlert("danger", "Error logging out! Try again.");
         }
     }
+
+    const checkout = () => {
+        navigate("/checkout");
+    }
+    
     function ShowAlert(type, message) {
         setType(type)
         setAlertMessage(message);
@@ -151,7 +156,7 @@ function Navbar() {
                             <h2 className='text-center'>Cart is empty!</h2>
                         }
                         <div className="modal-footer mt-2">
-                            <button type="button" className="btn text-white m-1 bg-blue card-btn fs-12" data-bs-dismiss="modal">Close</button>
+                            <button type="button" className="btn text-white m-1 bg-blue card-btn fs-12" data-bs-dismiss="modal" onClick={checkout}>Checkout</button>
                         </div>
                     </div>
                 </div>
